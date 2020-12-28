@@ -1,7 +1,0 @@
-ftp26750.200cdn.com
-webmaster@H10100461
-
-mkdir qint
-rmdir
-dir
-Desktop
