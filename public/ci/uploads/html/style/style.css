@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document autofocus*/
+*{ margin: 0; padding: 0; border:0; list-style:none;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;box-sizing: border-box;}
+ input {-webkit-user-select:auto; }  
+html,body{font:12px/140% "微软雅黑","宋体","Arial"; height:100%; padding:0px; margin:0px;}
+html{ font-size: 10px; }
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+@media screen and (min-width:800px){html{font-size:25px}}
+body{color: #333;background:no-repeat center -100px #F5F5F5; margin:0px; padding:0px;}
+a:link,a:visited{text-decoration:none;vertical-align:baseline;word-break:break-all;outline:none;}
+a:hover,a:active{text-decoration:underline;vertical-align:baseline;word-break:break-all;}
+
+.container{position: relative;height: 100%;padding:0;}
+.main-container {position: relative;height: 100%;-webkit-overflow-scrolling: touch;overflow: auto;}
+.bg-image {background: transparent center no-repeat;background-size: cover;position: relative;}
+.bg-main {background-image: url("img/e_main_normal.png");width: 100%;height: 100%;}
+.btn {font-weight: normal;line-height: 1.42857143;text-align: center;white-space: nowrap;vertical-align: middle;touch-action: manipulation;      user-select: none;background-image: none;border: none;border-radius: 2px;text-transform: none;overflow: visible;-webkit-appearance: none;      margin: 0;}
+.btn.focus,.btn:focus,.btn:hover {text-decoration: none;outline: none;}
+.btn.active,.btn:active {background-image: none;outline: 0;-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);}
+.download-wrap {width: 100%;height: 50px;padding: 0 15px;position: absolute;bottom: 20px;left: 0;}
+.btn-download {width: 100%;height: 100%;font-size: 18px;background: linear-gradient(to right, #278eee, #1e6ef5);box-shadow: 0 4px 12px rgba(0, 27, 109, 0.4);color: #fff;display: block;border: none;border-radius: 25px;}

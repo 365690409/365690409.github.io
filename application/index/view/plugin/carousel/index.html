@@ -1,0 +1,19 @@
+<?php
+$paren_demoid="carousel_1";
+?>
+<div id="{$paren_demoid}" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators"> 
+		{volist name="layout_carousellist" id="vo"}
+		<li data-target="#{$paren_demoid}" data-slide-to="{$key}" {if condition="$key==0"}class="active"{/if}></li>
+		{/volist} 
+	</ol> 
+	<div class="carousel-inner"> 
+		{volist name="layout_carousellist" id="vo"}
+		<div class="carousel-item {if condition="$key==0"}active show{/if}>"><img src="{$vo.image}" class="d-block w-100" alt="{$vo.name}"><div class="carousel-caption d-none d-md-block">
+            {$vo.description|default=""}
+		</div></div>
+		{/volist} 
+	</div> 
+	<a class="carousel-control-prev" href="#{$paren_demoid}" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
+	<a class="carousel-control-next" href="#{$paren_demoid}" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></a> 
+</div>

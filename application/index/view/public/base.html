@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title>{block name="title"}{/block}{$site.name}</title>
+{if isset($keywords)}
+<meta name="keywords" content="{$keywords}">
+{/if}
+{if isset($description)}
+<meta name="description" content="{$description}">
+{/if}
+{include file="public:meta" /}
+</head>
+<body>
+<!-- 头部区域 -->
+<header>
+	{block name="header"}{/block}
+</header>
+{block name="headerbpdy"}{/block}
+<!-- 主体内容区域 -->
+<div class="wrapper">
+	<!-- 固定大小 -->
+	<div class="container">
+	    <div class="row">
+	        <!-- 栏目区域 -->
+	        <div class="col-sm-3 col-md-6 col-lg-4 col-xl-2 p-0">
+		        {block name="wrapper-left"}{/block}
+	        </div>
+	        <!-- 内容区域 -->
+	        <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10 pr-0">
+	            {block name="wrapper-right"}{/block}    
+	        </div>
+	    </div>
+	</div>    
+</div>
+<!-- 底部区域 -->
+ <footer>
+    {block name="footer"}底部{/block}
+ </footer>
+</body>
+</html>

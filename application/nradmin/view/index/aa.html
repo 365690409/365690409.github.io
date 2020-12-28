@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>同泰出行</title>
+<link href="__STATIC__/admin/style/style.css" type="text/css" rel="stylesheet" />
+<script src="__STATIC__/admin/style/js/vue.min.js"></script>
+</head>
+
+<body>
+	<div id="app1">
+     <div v-drag class="drag">fdsf</div>
+     <div v-drag class="drag">fdsf</div>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th></th>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</table>
+	
+	<script>
+	// 拖动div元素
+    let vm1 = new Vue({
+        el:'#app1',
+        // 自定义指令
+        directives:{
+            drag(el,bindings){
+                el.onmousedown = function(e){
+                    var disx = e.pageX - el.offsetLeft;
+                    var disy = e.pageY - el.offsetTop;
+                    document.onmousemove = function (e){
+                        el.style.left = e.pageX - disx+'px';
+                        el.style.top = e.pageY - disx+'px';
+                    }
+                    document.onmouseup = function(){
+                        document.onmousemove = document.onmouseup = null;
+                    }
+                }
+            }
+        }
+    })
+	</script>
+</body>
+</html>

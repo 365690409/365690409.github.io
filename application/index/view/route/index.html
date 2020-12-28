@@ -1,0 +1,14 @@
+{extend name="public/base" /}
+{block name="title"}{$site.name}{/block}
+<!-- 头部区域 -->
+{block name="header"}
+    {include file="Public:header" /}
+{/block}
+<!-- 头部区域 -->
+{block name="headerbpdy"}
+   {$layout_carousel|default=""}
+{/block}
+<!-- 头部区域 -->
+{block name="footer"}
+    {include file="Public:footer" /}
+{/block}

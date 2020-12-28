@@ -1,0 +1,44 @@
+﻿<script language="JavaScript">
+Date.prototype.MagicInfo = function( type )
+{
+    var myDate = new Date();
+    var y = myDate.getFullYear();
+    var m = myDate.getMonth()+1;
+    var d = myDate.getDate();
+    var result = "";
+
+    switch (type)
+    {
+        case 'XZ'://星座
+          var XZDict = '摩羯宝瓶双鱼白羊金牛双子巨蟹狮子处女天秤天蝎射手';
+          var Zone = new Array(1222,122,222,321,421,522,622,722,822,922,1022,1122,1222);
+
+          if((100*m+d)>=Zone[0]||(100*m+d)<Zone[1])
+            var i=0;
+          else
+            for(var i=1;i<12;i++)
+            {
+                if((100*m+d)>=Zone[i]&&(100*m+d)<Zone[i+1])
+                  break;
+             }
+
+          result = XZDict.substring(2*i,2*i+2)+'座';
+          break;
+
+        case 'GZ'://干支
+          var GZDict = ['甲乙丙丁戊己庚辛壬癸','子丑寅卯辰巳午未申酉戌亥'];
+          var i= y -1900+36 ;
+          result = GZDict[0].charAt(i%10)+GZDict[1].charAt(i%12);
+          break;
+
+        case 'SX'://生肖
+          var SXDict = '鼠牛虎兔龙蛇马羊猴鸡狗猪';
+          result = SXDict.charAt((y-4)%12);
+          break;
+     }
+
+    return result;
+}
+
+alert(Date.prototype.MagicInfo('GZ'));
+</script>

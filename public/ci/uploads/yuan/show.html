@@ -1,0 +1,224 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>粤西袁氏家族</title>
+<link href="style/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="style/jquery_min.js"></script>
+<script type="text/javascript" src="style/jk.js"></script>
+</head>
+
+<body>
+<div class="popby_show" style="opacity: 100; display: block;"></div>
+<div class="popby_index"></div>
+<script type="text/javascript">
+var pudata="";
+pudataarr=["始祖","二世","三世","四世","五世","六世","七世","八世","九世","十世","十一世","十二世","十三世","十四世","十五世","十六世","十七世","十八世","十九世","二十世","二十一世","二十二世","二十三世","二十四世","二十五世","二十六世","二十七世","二十八世","二十九世","三十世","三十一世"];
+phtm='';
+phtm+='<div class="putu"><div class="fmbox"><div class="mofm10">';
+phtm+='<div class="mtbox">';
+phtm+='<div class="mtbox_tit">始祖'+pudata.tname+'至'+pudata.name+'祖谱图</div>';
+phtm+='<div class="mtbox_tit">';
+for(i in pudata.putu){
+phtm+=pudata.putu[i].name?'<a href="'+pudata.id+'_'+pudata.putu[i].id+'.html">'+pudata.putu[i].name+'</a>&nbsp;':'';
+}
+phtm+='</div>';
+phtm+='<div class="mtbox_tab"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="table"><tr>';
+for(i in pudata.putu){
+    if(pudata.putu[i].sd){
+	phtm+='<td '+(i==0?'style="width:180px; "':'class="wbbox"')+'><div>';
+	for(ii in pudata.putu[i].sd){
+	phtm+='<div class="mwbox'+(pudata.putu[i].sd[ii].id==pudata.putu[i].id?' mwimg':'')+'">';
+	phtm+='<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>';
+	phtm+=pudata.putu[i].sd[ii].id>1?'<td class="mnbox_cz">'+pudata.putu[i].sd[ii].zipaixu+'</td>':'';
+if(pudata.putu[i].sd[ii].xfdata){
+for(fi in pudata.putu[i].sd[ii].xfdata){
+phtm+='<td class="mnbox_cx">出继'+pudata.putu[i].sd[ii].xfdata[fi].name+'</td>';
+}
+}
+	
+	phtm+='<td class="mnbox_info" valign="top">';
+	if(i==0 && pudata.putu[i].sd[ii].id!=pudata.putu[i].id){
+	phtm+='<div class="mnbox_mz">'+pudata.putu[i].sd[ii].name+'</div>';
+	}else{
+	phtm+='<div class="mnbox_mz"><a href="'+pudata.putu[i].sd[ii].id+'_'+pudata.tid+'.html">'+pudata.putu[i].sd[ii].name+''+(pudata.putu[i].sd[ii].names?'('+pudata.putu[i].sd[ii].names+')':'')+'</a></div>';
+	}
+	phtm+=pudata.putu[i].sd[ii].cunzhuan?'<div class="mnbox_bz">'+pudata.putu[i].sd[ii].cunzhuan+'</div>':'';
+	phtm+=pudata.putu[i].sd[ii].qidata?'<div class="mnbox_bz">'+(pudata.putu[i].sd[ii].qidata.replace(/次娶/g,"<br>次娶").replace(/继娶/g,"<br>继娶").replace(/又娶/g,"<br>又娶").replace(/三娶/g,"<br>三娶").replace(/四娶/g,"<br>四娶").replace(/五娶/g,"<br>五娶"))+'</div>':'';
+	phtm+=pudata.putu[i].sd[ii].info3?'<div class="mnbox_bz">'+(pudata.putu[i].sd[ii].info3.replace(/,/g,"<br>"))+'</div>':'';
+//	phtm+=pudata.putu[i].sd[ii].info?'<div class="mnbox_bz">'+(pudata.putu[i].sd[ii].info.replace(/,/g,"<br>"))+'</div>':'';
+//	phtm+=pudata.putu[i].sd[ii].info2?'<div class="mnbox_bz">'+(pudata.putu[i].sd[ii].info2.replace(/,/g,"<br>"))+'</div>':'';
+	phtm+=pudata.putu[i].sd[ii].txt?'<div class="mnbox_bz">'+(pudata.putu[i].sd[ii].txt.replace(/,/g,"<br>"))+'</div>':'';
+	phtm+='</td>';
+	phtm+=pudata.putu[i].sd[ii].qizi?'<td class="mnbox_qz">娶'+pudata.putu[i].sd[ii].qizi+'</td>':'';
+	phtm+=pudata.putu[i].sd[ii].zinu?'<td class="mnbox_ez">生'+pudata.putu[i].sd[ii].zinu+'</td>':'';
+	phtm+=pudata.putu[i].sd[ii].xztit?'<td class="mnbox_xz">'+pudata.putu[i].sd[ii].xztit+'入继</td>':'';
+	phtm+='</tr></table>';
+	phtm+='</div>';
+	}
+	phtm+='<div style=" line-height:0; height:10px;"></div>';
+	phtm+='</div></td>';
+	}
+}
+phtm+='<td></td>';
+//phtm+='</tr><tr class="ms">';
+//for(i in pudata.putu){
+//phtm+='<td '+(i==0?'style="width:180px; "':'class="wbbox"')+'><div class="ms_name">'+(pudata.putu[i].sname?pudata.putu[i].sname+'支派':'')+'</div></td>';
+//}
+//phtm+='<td></td>';
+phtm+='</tr><tr class="ms">';
+for(i in pudata.putu){
+phtm+='<td '+(i==0?'style="width:180px; "':'class="wbbox"')+'><div class="ms_name">'+pudata.tname+''+pudataarr[i]+'</div></td>';
+}
+phtm+='<td></td>';
+phtm+='</tr></table></div>';
+phtm+='</div>';
+phtm+='</div></div></div>';
+
+prs=pudata;
+phtm+='<div class="puinfo">';
+phtm+='<div class="fmbox"><div class="mofm10">';
+phtm+='<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table"><tr><td style="width:100px;" >';
+phtm+='<div><span class="tit" style="background:#008C46;">'+prs.tname+'支派</span></div>';
+phtm+='<div><span class="tit"><a href="'+prs.sid+'_'+prs.tid+'.html">'+prs.fdata.name+'</a>'+prs.zipaixu+'</span></div>';
+if(prs.xfdata){
+for(fi in prs.xfdata){
+phtm+='<div><span class="tit" style="background:#F90;"><a href="'+prs.xfdata[fi].id+'_'+prs.tid+'.html">继'+prs.xfdata[fi].name+'</a></span></div>';
+}
+}
+
+phtm+='</td><td>';
+phtm+='<div class="my">';
+phtm+='<div class="name">'+prs.name+(prs.names?'('+prs.names+')':'')+'</div>';
+phtm+='<div>('+prs.fname+')'+prs.pinyin+'</div>';
+phtm+='</div>';
+if(prs.eidtok==1){
+phtm+='</td><td style="width:50px;" ><div class="txt"><div onClick="aeidt();" class="pkbut">编辑</div></div>';
+}
+phtm+='</td></tr></table>';
+phtm+='</div></div>';
+zphtm='';
+if(prs.zidata){
+for(zi in prs.zidata){
+zphtm+='<a href="'+prs.zidata[zi].id+'_'+pudata.tid+'.html">'+prs.zidata[zi].zipaixu+prs.zidata[zi].name+'</a> ';
+}
+}
+sfmsg={"id":prs.id,"inp":[
+{t:"村庄",v:prs.cunzhuan},
+{t:"妻名",v:prs.qizi},
+{t:"妻子",v:prs.qidata},
+{t:"子女",v:zphtm},
+{t:prs.name,v:prs.info.replace(/,/g,'<br>')},
+{t:"妻详细",v:prs.info2.replace(/,/g,'<br>')},
+{t:"备注二",v:prs.info3.replace(/,/g,'<br>')},
+{t:"备注",v:prs.txt.replace(/,/g,'<br>')},
+]};
+phtm+='<div class="clear10"></div>'+$yk.itbshowbox(sfmsg.inp);
+phtm+='<div class="clear10"></div><div class="fmbox"><div class="mofm10">';
+phtm+='<div class="intit">来源:电子图</div>';
+phtm+='<div><a href="/img/'+prs.id+'"><img src="/img/'+prs.id+'" width="100%" /></a></div>';
+phtm+='</div></div>';
+
+if(prs.puinfo){
+for(zi in prs.puinfo){
+phtm+='<div class="clear10"></div><div class="fmbox"><div class="mofm10">';
+phtm+='<div class="intit">信息来源:'+prs.puinfo[zi].tit+'</div>';
+phtm+=prs.puinfo[zi].imgs?'<div><a href="'+prs.puinfo[zi].imgs+'"><img src="'+prs.puinfo[zi].imgs+'" width="100%" /></a></div>':'';
+phtm+=prs.puinfo[zi].content?'<div>'+prs.puinfo[zi].content+'</div>':'';
+phtm+='</div></div>';
+}
+}
+
+phtm+='</div>';
+$(".popby_index").html(phtm);
+
+function aeidt(){
+prs=pudata;
+zphtm='';
+if(prs.zidata){
+for(zi in prs.zidata){
+zphtm+='<input type="text" name="zids['+prs.zidata[zi].id+']" value=""  style="width:60px;" placeholder="'+prs.zidata[zi].name+'"/>';
+}
+}
+
+gzhtm='';
+if(prs.gzj){
+gzhtm+='<select name="gzjn">';
+gzhtm+='<option value="">请选择</option>';
+for(zi in prs.gzj){
+gzhtm+='<option value="'+prs.gzj[zi].b+prs.gzj[zi].e+'('+prs.gzj[zi].n+'年)">'+prs.gzj[zi].b+prs.gzj[zi].e+'('+prs.gzj[zi].n+'年)</option>';
+}
+gzhtm+='</select>';
+gzhtm+='<select name="gzjn_m">';
+gzhtm+='<option value="">请选择</option>';
+for(zi in prs.gzj_m){
+gzhtm+='<option value="'+prs.gzj_m[zi]+'">'+prs.gzj_m[zi]+'</option>';
+}
+gzhtm+='</select>';
+gzhtm+='<select name="gzjn_d">';
+gzhtm+='<option value="">请选择</option>';
+for(zi in prs.gzj_d){
+gzhtm+='<option value="'+prs.gzj_d[zi]+'日">'+prs.gzj_d[zi]+'日</option>';
+}
+gzhtm+='</select>';
+gzhtm+='<select name="gzjn_s">';
+gzhtm+='<option value="">请选择</option>';
+for(zi in prs.gzj_s){
+gzhtm+='<option value="'+prs.gzj_s[zi]+'">'+prs.gzj_s[zi]+'</option>';
+}
+gzhtm+='</select>';
+}
+
+sfmsg={"id":prs.id,"inp":[
+{t:"信息",v:prs.tname+'支派 '+prs.fdata.name+''+prs.zipaixu},
+{t:"名字",n:"name",v:prs.name},
+{t:"又名",n:"names",v:prs.names},
+//{t:"村庄",n:"cunzhuan",v:prs.cunzhuan},
+{t:prs.name,n:"info",type:"textarea",v:prs.info},
+{t:"妻名",n:"qizi",v:prs.qizi},
+{t:"妻子",n:"qidata",v:prs.qidata},
+{t:"妻详细",n:"info2",type:"textarea",v:prs.info2},
+//{t:"排序",v:zphtm},
+//{t:"儿子",type:"textarea",n:"zname",v:""},
+{t:"备注",type:"textarea",n:"txt",v:prs.txt},
+{t:"备注二",n:"info3",v:prs.info3},
+{t:"年月时",v:gzhtm},
+//{t:"继子",n:"xz",v:prs.xz},
+//{t:"出继",n:"xf",v:prs.xf},
+],"l_type":"ad_e","l_code":"user",l_but:"确认保存"};
+phtm='';
+phtm+='<div class="ppfdtop"><div class="ppfdtop_tit">&nbsp;<div class="tit_close" onclick="moindex()"><span class="awrn"></span></div></div></div>';
+phtm+='<div class="mofm10">';
+phtm+='<div class="clear20"></div>';
+phtm+='<form id="fromuser" method="post"><div class="mofm16"><input type="hidden" name="id" value="'+sfmsg.id+'">';
+phtm+='<input type="hidden" name="yk_code" value="eit_p">';
+phtm+='<input type="hidden" name="yk_s" value="'+sfmsg.l_code+'">';
+phtm+=$yk.htbputbox(sfmsg.inp);
+phtm+=sfmsg.inpb?'<div class="clear10"></div>'+$yk.htbputbox(sfmsg.inpb):'';
+phtm+='</div><div class="mofm16"><div class="pkbut pkbutsd" onClick="adbut(this);">'+sfmsg.l_but+'</div></div>';
+phtm+='</form>';
+phtm+='</div>';
+$(".popby_show").html(phtm);
+$(".popby_index").hide();
+$(".popby_show").show();
+}
+$(".mtbox_tab").scrollLeft(100000);
+function moindex(){
+  $(".popby_show").html("");
+  $(".popby_index").show();
+  $(".popby_show").hide();
+}
+function adbut(cthis){
+  $.post('/eidt',$(cthis).parents("form").serialize(),function(sfmsg){
+	  if(sfmsg==1){
+	  alert("操作失误");
+	  }else{
+	  alert(sfmsg);
+	  location.reload();
+	  }
+  });
+}
+</script>
+</body>
+</html>

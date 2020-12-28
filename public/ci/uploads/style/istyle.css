@@ -1,0 +1,45 @@
+body {
+  background: #333;
+  font-family: sans-serif;
+  text-align: center;
+}
+.stage {
+  text-align: left;
+}
+[class*='icono'] {
+  color: #eee;
+  opacity: 0.6;
+}
+span {
+  padding: 10px;
+  display: inline-block;
+}
+span:hover {
+  transform: scale(1.5);
+}
+span:hover i {
+  opacity: 0.8;
+}
+
+.icono-flag{ border-color:#333; transform:scale(0.6);}
+.icono-flag:before{ border-color:#333;}
+.icono-flag:after{ border-color:#333;}
+.icono-document{ border-color:#333;transform:scale(0.6);}
+.icono-document:before{ border-color:#333;}
+.icono-document:after{ border-color:#333;color:#333;}
+.icono-comment{ color:#333;transform:scale(0.6);}
+.icono-user{ border-color:#333;transform:scale(0.6);}
+.icono-user:before{ border-color:#333;}
+
+.bynavck{ color:#0C82F0;}
+.bynavck .icono-flag{ border-color:#0C82F0; }
+.bynavck .icono-flag:before{ border-color:#0C82F0;}
+.bynavck .icono-flag:after{ border-color:#0C82F0;}
+.bynavck .icono-document{ border-color:#0C82F0;}
+.bynavck .icono-document:before{ border-color:#0C82F0;}
+.bynavck .icono-document:after{ border-color:#0C82F0;color:#0C82F0;}
+.bynavck .icono-comment{ color:#0C82F0;}
+.bynavck .icono-user{ border-color:#0C82F0;}
+.bynavck .icono-user:before{ border-color:#0C82F0;}
+
+

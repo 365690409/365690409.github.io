@@ -1,0 +1,12 @@
+<nav aria-label="breadcrumb ">
+  <ol class="breadcrumb alert-primary">
+    {if condition="$breadcrumbtitle"}<li class="breadcrumb-item"><span>{$breadcrumbtitle}</span></li>{/if}
+    {volist name="breadcrumball" id="vo"}
+    {if condition="$vo.id"} 
+    <li class="breadcrumb-item"><a href="{$vo.type}_{$vo.nickname}" title="{$vo.name}">{$vo.name}</a></li>
+    {else}
+    <li class="breadcrumb-item active" aria-current="page">{$vo.name}</li>
+    {/if}
+    {/volist}
+  </ol>
+</nav>

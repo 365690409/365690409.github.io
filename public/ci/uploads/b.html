@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>同泰出行</title>
+<link href="style/icono.css" type="text/css" rel="stylesheet" />
+<link href="style/style.css" type="text/css" rel="stylesheet" />
+<link href="style/yw.css?a=2" type="text/css" rel="stylesheet" />
+<link href="style/ye.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="style/jquery_min.js"></script>
+<script type="text/javascript" src="style/c.js"></script>
+<script type="text/javascript" src="/common.js"></script>
+</head>
+
+<body>
+<div class="ywhtop"></div>
+</body>
+</html>
+<script>
+
+var audiourl='http://ai.baidu.com/aidemo?type=tns&spd=5&pit=8&vol=15&per=5&dt=1&tex='+encodeURI('行程已开始请小心驾驶');
+     var audio = new Audio(audiourl);
+     audio.src = audiourl;
+     audio.play();
+$(".ywhtop").html($yw.bnav({l:1,r:2,z:{g:'湛江市'}})+$yw.bnav({r:3,z:{c:[{n:'乘客'},{n:'车主'}]}})+$yw.bnav({r:4,c:[{n:'快车'},{n:'同时呼叫'},{n:'出发吧师傅'},{n:'顺风车'},{n:'拼车'},{n:'出租车'},{n:'代驾'},{n:'公交'},{n:'小桔租车'},{n:'豪华车'},{n:'金融服务'},{n:'电单车'},{n:'专车'}]})+$yw.bnav({l:5,z:{g:'&nbsp;'},r:'<div class="fmstwx_name" onClick="ywnslow(this);">智能排序</div>',a:[{n:'快车'},{n:'同时呼叫'},{n:'出发吧师傅'},{n:'顺风车'}]})+$yw.bnav({l:5,z:{g:'&nbsp;'},r:'<div class="fmstwx_name" onClick="ywnslow(this);">全部目的地</div>',b:[{n:'快车'},{n:'同时呼叫'},{n:'出发吧师傅'},{n:'顺风车'}]}));
+</script>

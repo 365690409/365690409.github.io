@@ -1,0 +1,12 @@
+<div class="card border-white">
+   <div class="card-header"><h3>{$menutitle}</h3></div>
+   <div class="card-body p-0">
+   	   <div class="list-group">
+   	   	   {volist name="menulist" id="vo"}
+   	   	   <a href="/{$selfclass.type}_{$vo.nickname}" title="{$vo.name}" class="list-group-item list-group-item-action border-left-0 border-right-0 {$vo.id}">{$vo.name}</a>
+   	   	   {/volist}
+   	   </div>
+   </div>
+</div>
+<div class="p-2"></div>
+
