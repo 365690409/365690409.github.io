@@ -20,7 +20,7 @@ new Vue({
   },
   mounted () {
     axios
-      .post('/')
+      .post('/index.html')
       .then(response => (this.info = response))
       .catch(function (error) { // 请求失败处理
         console.log(error);
