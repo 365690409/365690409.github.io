@@ -1,1 +1,4 @@
+git config --global user.name "365690409"
+git config --global user.email "365690409@qq.com"
 ssh-keygen -t rsa -C "365690409@qq.com"
+ssh -T git@github.com
