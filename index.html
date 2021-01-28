@@ -11,6 +11,7 @@
 	<link href="nrcss/carousel.css" rel="stylesheet">
 	<script src="js/vue.js"  crossorigin="anonymous"></script>
 	<script src="js/vue-router.js"  crossorigin="anonymous"></script>
+	<script src="js/axios.min.js"  crossorigin="anonymous"></script>
 </head>
 <body class="bg-light">
 <div id="app">
@@ -93,31 +94,48 @@
 <script src="foo.js"></script>
 <script src="bar.js"></script>
 <script src="news.js"></script>
-	<script src="js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
-
+<script src="js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 <script>
-// 2. 定义路由
-// 每个路由应该映射一个组件。 其中"component" 可以是
-// 通过 Vue.extend() 创建的组件构造器，
-// 或者，只是一个组件配置对象。
-// 我们晚点再讨论嵌套路由。
-const routes = [
+const RoutesDome={
+};
+RoutesDome.index = Vue.extend({
+  template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
+  data: function () {
+    return {
+      firstName: 'qq',
+      lastName: 'White',
+      alias: 'Heisenberg'
+    }
+  }
+})
+
+
+/*
+  路由
+  #path 路径
+  #component 组成部分
+     #template 模板
+  #children 子路由
+     #path 路径
+     #component 组成部分
+  #redirect 重定向 
+  #name 路由名字  
+  --template--
+  #$route.params
+*/
+const router = new VueRouter({routes:[
+  { path: '/index', component:  RoutesDome.index,params:{cid:"sadsa"} },
   { path: '/foo', component: Foo },
   { path: '/bar', component: Bar },
-  { path: '/news', component: News }
-]
-
-// 3. 创建 router 实例，然后传 `routes` 配置
-// 你还可以传别的配置参数, 不过先这么简单着吧。
-const router = new VueRouter({
-  routes // （缩写）相当于 routes: routes
-})
+  { path: '/news', component: News },
+  { path: '/', redirect: '/index'  },
+]})
 
 // 4. 创建和挂载根实例。
 // 记得要通过 router 配置参数注入路由，
 // 从而让整个应用都有路由功能
 const app = new Vue({
-  router
+  router,data:{id:1}
 }).$mount('#app')
 
 // 现在，应用已经启动了！

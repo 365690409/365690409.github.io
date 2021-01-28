@@ -16,4 +16,4 @@ git remote add origin https://github.com/365690409/vue2021.git
 
 5、找到一个名为gitconfig的文件，打开它把里面的[remote "origin"]那一行删掉就好了！
 
- 
+ https://github.com/czero1995/fancy-store
