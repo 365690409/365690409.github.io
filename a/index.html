@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>位置经纬度 + 驾车规划路线</title>
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="position-fixed top-0 start-0 end-0 bottom-0">
+        <div id="container" class="h-100" tabindex="0"></div>
+        <div class="bg-white position-absolute start-0 bottom-0" style="z-index:999">
+            <input id='amap-origin' type="text" value=''>
+            <input id='amap-origin-city' type="text" value='湛江'>
+            <input id='amap-origin-location' type="text" value=''>
+
+            <div id="aadaa"></div>
+            <div id="amap-origin-body"></div>
+            <input id='amap-destination' type="text" value=''>
+            <input id='amap-destination-city' type="text" value='湛江'>
+            <input id='amap-destination-location' type="text" value=''>
+
+            <div id="amap-destination-body"></div>
+            <div id="navResult"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="amap-layout.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>
