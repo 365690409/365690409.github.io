@@ -39,3 +39,7 @@ git remote add origin https://github.com/3/3.git
 git push -u origin main
               
  https://github.com/365690409/homewprk.git
+
+
+git commit -m "first commit"
+git push
